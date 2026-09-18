@@ -34,27 +34,6 @@ Para compilar: `npm run build`. Para revisar la compilación: `npm run preview`.
 - **public/assets/**: video.mp4, audio.mp3 y primer fotograma de referencia.
 - **vite.config.js**: servidor local y exclusiones para evitar bloqueos de Windows.
 
-## Requisitos del taller
-
-La esfera del reloj usa `VideoTexture` sobre una geometría circular. Los tres engranajes son objetos adicionales, construidos con aros, cajas y cilindros. La mesa y el péndulo también forman parte de la ambientación.
-
-Los engranajes giran y flotan, y el péndulo se balancea en `requestAnimationFrame`. La animación utiliza el tiempo transcurrido: su velocidad no depende de cuántos fotogramas pueda renderizar el equipo. El objetivo es fluidez a 60 FPS. El video tiene 24 FPS, independientemente de la animación 3D.
-
-El audio usa `PositionalAudio` unido a la esfera y un `AudioListener` en la cámara. La atenuación es lineal, con distancia de referencia de 2 y alcance de 18 unidades. El video queda silenciado como elemento HTML porque el sonido se reproduce por separado en el espacio 3D.
-
-El MP4 muestra una manecilla roja que avanza cada medio segundo, completando una vuelta en 12 segundos. El MP3 alterna dos sonidos de tictac cada medio segundo. Ambos archivos fueron generados por código para este proyecto.
-
-## Entrega
-
-El profesor pide un RAR sin contraseña que contenga:
-
-1. Un documento con el enlace al repositorio público.
-2. Una demostración MP4 de 30 a 60 segundos, con audio.
-3. Una ficha PDF de una página explicando el concepto, con el nombre del estudiante.
-
-Graba esta versión del reloj: muestra la escena, inicia los medios, acércate y aléjate, y prueba pausar y reanudar. Activa el audio del sistema en el grabador.
-
-Los archivos de `scripts/` son herramientas opcionales para generar medios y preparar la entrega. Para crear la ficha con tu nombre:
 
 ```powershell
 .venv\Scripts\python scripts/generate_concept.py --author "Nombre Apellido"
